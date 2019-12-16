@@ -1,0 +1,26 @@
+[package]
+name = "rust-website"
+version = "0.1.0"
+authors = ["bilsen <ivar.kallstrom@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+log="0.4.8"
+
+[dependencies.rocket]
+version = "0.4.2"
+features = ["private-cookies"]
+
+[dependencies.rocket_contrib]
+version = "0.4.2"
+default-features = false
+features = ["templates", "json", "handlebars_templates", "tera_templates", "serve", "databases", "diesel_postgres_pool"]
+
+[dependencies.diesel]
+version = "1"
+features = ["serde_json"]
